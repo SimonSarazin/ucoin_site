@@ -48,23 +48,28 @@ fetch the dependencies using::
 Populating the Database
 =======================
 
-Default confuguration will create a sqlite database. You could configure a database server on PostGreSQL_. It is recommended for large website
+You can use the actual "project.db" as an example, with an already completed homepage.
 
-Then you need to initialize your database with these commands::
+(optionnal) If you want to a new sqlite database. you need to initialize it with these commands::
 
     python manage.py syncdb --all
     python manage.py migrate --fake
     python manage.py check_permissions
 
 
-Django will prompt for a user creation, this is always a good idea to say *yes*::
+(optionnal) Django will prompt for a user creation, this is always a good idea to say *yes*::
 
      You just installed Django's auth system, which means you don't have any superusers defined.
      Would you like to create one now? (yes/no): **yes**
 
+(optionnal) You could also configure a database server on PostGreSQL_. It is recommended for large website
+
+
 Now, run the server::
 
     python manage.py runserver
+
+Admin login/password is "admin/admin"
 
 
 Licenses
