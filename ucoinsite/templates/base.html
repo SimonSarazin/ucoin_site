@@ -1,0 +1,57 @@
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}This is my new project home page{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% render_block "css" %}
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+       jQuery.ajaxSetup({cache: true});
+       jQuery.getScript("https://static.jappix.com/php/get.php?l=en&t=js&g=mini.xml", function() {
+         MINI_GROUPCHATS = ["ucoin@muc.jappix.com"];
+         MINI_ANIMATE = true;
+         launchMini(false, true, "anonymous.jappix.com");
+       });
+    </script>
+  </head>
+  <body style="padding-top:60px">
+    {% cms_toolbar %}
+        <div class="container">
+          <div class="header">
+        <ul class="nav nav-pills pull-right">
+           {% show_menu 0 1 100 100 "menu.html" %}
+        </ul>
+         <ul class="nav navbar-nav">
+               
+              </ul>
+        <h3 class="text-muted">uCoin project</h3>
+
+
+             
+      </div>
+
+        {% block content %}
+        {% endblock content %}
+
+        <div class="footer">
+        <p class="left">uCoin team</p>
+        <p class="right">
+        <script data-gittip-username="ucoin"
+        src="//gttp.co/v1.js"></script>
+        </p>
+        <p class="github"><a href="https://github.com/ucoin-io"><img src="{{ STATIC_URL }}images/github-128-black.png"></a></p>
+      </div>
+
+        </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    {% render_block "js" %}
+
+      <div id="jappix_mini" style="display: none;" dir="ltr"><div class="jm_position"><div class="jm_conversations" style="float: left;"></div><div class="jm_starter" style="float: right;"><span class="jm_animate jm_images_animate"></span><div class="jm_roster" style=""><div class="jm_actions"><a class="jm_logo jm_images" href="https://mini.jappix.com/" target="_blank"></a><a class="jm_one-action jm_join jm_images" title="Join a chat" href="#"></a><a class="jm_one-action jm_status" title="Status" href="#"><span class="jm_presence jm_images jm_available"></span></a><div class="jm_status_picker" style="display: none;"><a href="#" data-status="available"><span class="jm_presence jm_images jm_available"></span><span class="jm_show_text">Available</span></a><a href="#" data-status="away"><span class="jm_presence jm_images jm_away"></span><span class="jm_show_text">Away</span></a><a href="#" data-status="dnd"><span class="jm_presence jm_images jm_dnd"></span><span class="jm_show_text">Busy</span></a><a href="#" data-status="unavailable"><span class="jm_presence jm_images jm_unavailable"></span><span class="jm_show_text">Offline</span></a></div></div><div class="jm_buddies" style="max-height: 284px;"></div><div class="jm_search"><input type="text" class="jm_searchbox jm_images" placeholder="Filter" data-value=""></div></div><a class="jm_pane jm_button jm_images" href="#"><span class="jm_counter jm_images">Chat</span></a></div></div></div>
+  </body>
+</html>
+
