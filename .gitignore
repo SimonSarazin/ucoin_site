@@ -1,0 +1,4 @@
+/ucoinsite/wsgi.py
+/ucoinsite/site_settings.py
+*.db
+*.pyc
