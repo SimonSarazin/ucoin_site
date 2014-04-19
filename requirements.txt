@@ -4,6 +4,7 @@ South==0.8.4
 argparse==1.2.1
 beautifulsoup4==4.3.2
 dj-database-url==0.3.0
+django-app-namespace-template-loader==0.1
 django-blog-zinnia==0.14.1
 django-classy-tags==0.5.1
 django-cms==3.0
@@ -30,3 +31,4 @@ pyparsing==2.0.2
 pytz==2014.2
 six==1.6.1
 wsgiref==0.1.2
+zinnia-theme-bootstrap==0.3.1
